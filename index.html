@@ -708,8 +708,7 @@
       >
         <div class="w-100">
           <h2 class="mb-5">Resume</h2>
-
-          <a href="/pdf/HosseinResume.pdf" target="_blank">
+          <a id="pdfUrl" href="#" target="_blank">
             <i class="fas fa-file-pdf fa-2x" style="margin-right:5px"></i>
             <span style="font-size: 30px">Download resume file</span>
           </a>
@@ -726,5 +725,14 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/resume.min.js"></script>
+
+    <script>
+      function setPdfUrl() {
+        var re = new RegExp(/^.*\//);
+        document.getElementById("pdfUrl").href =
+          re.exec(window.location.href) + "pdf/HosseinResume.pdf";
+      }
+      setPdfUrl();
+    </script>
   </body>
 </html>
