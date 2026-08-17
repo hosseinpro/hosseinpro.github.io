@@ -1,427 +1,719 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hossein Rezai — Cryptography &amp; Security Systems Engineer</title>
-<meta name="description" content="Hossein Rezai — cryptography and security systems engineer in San Diego. HSM firmware, multi-party computation, threshold signatures, PKI and digital asset custody.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&family=Barlow+Condensed:wght@400;600&display=swap">
-<link rel="stylesheet" href="styles.css">
-<style>
-  body { margin: 0; }
-  html { scroll-behavior: smooth; }
-  a { color: var(--color-accent-700); }
-  a:hover { color: var(--color-accent); }
-  [data-site] section { scroll-margin-top: 24px; }
-  [data-sidebar] nav a { transition: color .15s ease, border-color .15s ease; border-bottom: 1px solid transparent; align-self: flex-start; }
-  [data-sidebar] nav a:hover { border-bottom-color: currentColor; }
-  [data-card]:hover { background: color-mix(in srgb, var(--color-accent) 7%, transparent); }
-  [data-card] { transition: background .15s ease; }
-  @media (max-width: 900px) {
-    [data-site] { grid-template-columns: 1fr !important; }
-    [data-sidebar] { position: static !important; height: auto !important; }
-    [data-main] { padding: 0 28px !important; }
-    [data-row] { grid-template-columns: 1fr !important; }
-    [data-row] [data-when] { text-align: left !important; }
-    [data-pair] { grid-template-columns: 1fr !important; }
-  }
-  @media (max-width: 620px) {
-    [data-grid-2] { grid-template-columns: 1fr !important; }
-  }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hossein Rezai — Cryptography &amp; Security Systems Engineer</title>
+  <meta name="description"
+    content="Hossein Rezai — cryptography and security systems engineer in San Diego. HSM firmware, multi-party computation, threshold signatures, PKI and digital asset custody.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&family=Barlow+Condensed:wght@400;600&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      margin: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    a {
+      color: var(--color-accent-700);
+    }
+
+    a:hover {
+      color: var(--color-accent);
+    }
+
+    [data-site] section {
+      scroll-margin-top: 24px;
+    }
+
+    [data-sidebar] nav a {
+      transition: color .15s ease, border-color .15s ease;
+      border-bottom: 1px solid transparent;
+      align-self: flex-start;
+    }
+
+    [data-sidebar] nav a:hover {
+      border-bottom-color: currentColor;
+    }
+
+    [data-card]:hover {
+      background: color-mix(in srgb, var(--color-accent) 7%, transparent);
+    }
+
+    [data-card] {
+      transition: background .15s ease;
+    }
+
+    @media (max-width: 900px) {
+      [data-site] {
+        grid-template-columns: 1fr !important;
+      }
+
+      [data-sidebar] {
+        position: static !important;
+        height: auto !important;
+      }
+
+      [data-main] {
+        padding: 0 28px !important;
+      }
+
+      [data-row] {
+        grid-template-columns: 1fr !important;
+      }
+
+      [data-row] [data-when] {
+        text-align: left !important;
+      }
+
+      [data-pair] {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+    @media (max-width: 620px) {
+      [data-grid-2] {
+        grid-template-columns: 1fr !important;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<div data-site="true" style="min-height: 100vh; background: var(--color-bg); color: var(--color-text); display: grid; grid-template-columns: 380px 1fr;">
+  <div data-site="true"
+    style="min-height: 100vh; background: var(--color-bg); color: var(--color-text); display: grid; grid-template-columns: 380px 1fr;">
 
-  <aside data-sidebar="true" style="position: sticky; top: 0; height: 100vh; background: var(--color-accent-900); color: var(--color-bg); padding: 44px 36px; display: flex; flex-direction: column; gap: 28px; overflow: auto;">
-    <figure class="blueprint duotone" style="width: 148px;">
-      <img src="assets/portrait.png" alt="Hossein Rezai" style="width: 100%; display: block;">
-      <i class="corner tl" style="color: var(--color-accent-300);"></i><i class="corner tr" style="color: var(--color-accent-300);"></i><i class="corner bl" style="color: var(--color-accent-300);"></i><i class="corner br" style="color: var(--color-accent-300);"></i>
-    </figure>
-    <div>
-      <div style="font-family: var(--font-heading); font-size: 34px; line-height: 1.05; text-transform: uppercase; letter-spacing: 0.02em;">Hossein<br>Rezai</div>
-      <div style="font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-300); margin-top: 10px;">Cryptography &amp; Security<br>Systems Engineer</div>
-    </div>
-    <nav style="display: flex; flex-direction: column; gap: 10px; font-family: var(--font-heading); font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; border-top: 1px solid var(--color-accent-700); padding-top: 24px;">
-      <a href="#about" style="text-decoration: none; color: inherit;">About</a>
-      <a href="#experience" style="text-decoration: none; color: inherit;">Experience</a>
-      <a href="#patents" style="text-decoration: none; color: inherit;">Patents</a>
-      <a href="#work" style="text-decoration: none; color: inherit;">Independent R&amp;D</a>
-      <a href="#research" style="text-decoration: none; color: inherit;">Research &amp; education</a>
-      <a href="#publications" style="text-decoration: none; color: inherit;">Publications</a>
-      <a href="#blogs" style="text-decoration: none; color: inherit;">Blogs</a>
-    </nav>
-    <div style="margin-top: auto; display: flex; flex-direction: column; gap: 6px; font-size: 14px; border-top: 1px solid var(--color-accent-700); padding-top: 24px;">
-      <a href="https://linkedin.com/in/hosrez" target="_blank" rel="noopener" style="color: var(--color-accent-300); display: flex; align-items: center; gap: 10px;">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-        <span>linkedin.com/in/hosrez</span>
-      </a>
-      <a href="https://github.com/hosseinpro" target="_blank" rel="noopener" style="color: var(--color-accent-300); display: flex; align-items: center; gap: 10px;">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 2-2.64-.5-5.36-.5-8 0-2-2-3-2-3-2-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
-        <span>github.com/hosseinpro</span>
-      </a>
-      <a href="https://scholar.google.com/citations?user=DyIrNbIAAAAJ&amp;hl=en" target="_blank" rel="noopener" style="color: var(--color-accent-300); display: flex; align-items: center; gap: 10px;">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6"></path><path d="M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
-        <span>Google Scholar</span>
-      </a>
-      <div style="font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent-300); margin-top: 10px; opacity: 0.75;">San Diego, California</div>
-    </div>
-  </aside>
-
-  <main data-main="true" style="padding: 0 56px; max-width: 1000px;">
-
-    <section id="about" style="padding: 88px 0 0;">
-      <h1 style="font-size: clamp(40px, 4.4vw, 62px); line-height: 1.04; letter-spacing: -0.02em; margin: 0 0 24px; max-width: 26ch;">Twenty years where key compromise is unrecoverable.</h1>
-      <p style="font-size: 19px; line-height: 1.6; max-width: 68ch; margin: 0 0 14px; text-wrap: pretty;">Cryptography engineer, hands-on across the full trust chain: HSM firmware, secure element programming and secure boot at the hardware layer; multi-party computation, threshold signing and PKI at the protocol layer; production key management and custody platforms above that.</p>
-      <p style="font-size: 19px; line-height: 1.6; max-width: 68ch; margin: 0;">I build the primitives other engineers depend on and stay accountable for how they hold up in practice.</p>
-      <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px;">
-        <span class="tag tag-outline" style="font-size: 13px; padding: 6px 12px;">Applied Cryptography</span>
-        <span class="tag tag-outline" style="font-size: 13px; padding: 6px 12px;">Key Management</span>
-        <span class="tag tag-outline" style="font-size: 13px; padding: 6px 12px;">MPC</span>
-        <span class="tag tag-outline" style="font-size: 13px; padding: 6px 12px;">Threshold Signatures</span>
-        <span class="tag tag-outline" style="font-size: 13px; padding: 6px 12px;">HSM</span>
-        <span class="tag tag-outline" style="font-size: 13px; padding: 6px 12px;">TEE</span>
-        <span class="tag tag-outline" style="font-size: 13px; padding: 6px 12px;">Secure Elements</span>
-        <span class="tag tag-outline" style="font-size: 13px; padding: 6px 12px;">Embedded Firmware</span>
-        <span class="tag tag-outline" style="font-size: 13px; padding: 6px 12px;">Secure Boot</span>
-        <span class="tag tag-outline" style="font-size: 13px; padding: 6px 12px;">PKI</span>
-        <span class="tag tag-outline" style="font-size: 13px; padding: 6px 12px;">Digital Asset Custody</span>
-        <span class="tag tag-outline" style="font-size: 13px; padding: 6px 12px;">Rust · C/C++ · Python · JS</span>
+    <aside data-sidebar="true"
+      style="position: sticky; top: 0; height: 100vh; background: var(--color-accent-900); color: var(--color-bg); padding: 44px 36px; display: flex; flex-direction: column; gap: 28px; overflow: auto;">
+      <figure class="blueprint duotone" style="width: 148px;">
+        <img src="assets/portrait.png" alt="Hossein Rezai" style="width: 100%; display: block;">
+        <i class="corner tl" style="color: var(--color-accent-300);"></i><i class="corner tr"
+          style="color: var(--color-accent-300);"></i><i class="corner bl"
+          style="color: var(--color-accent-300);"></i><i class="corner br" style="color: var(--color-accent-300);"></i>
+      </figure>
+      <div>
+        <div
+          style="font-family: var(--font-heading); font-size: 34px; line-height: 1.05; text-transform: uppercase; letter-spacing: 0.02em;">
+          Hossein<br>Rezai</div>
+        <div
+          style="font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-300); margin-top: 10px;">
+          Cryptography &amp; Security<br>Systems Engineer</div>
       </div>
-    </section>
-
-    <section id="experience" style="padding: 80px 0 0;">
-      <h2 style="font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-accent-700); margin: 0 0 28px;">Experience</h2>
-
-      <div style="display: grid; grid-template-columns: 1fr; gap: 0;">
-        <div data-row="true" style="border-top: 1px solid var(--color-divider); padding: 26px 0; display: grid; grid-template-columns: 1fr 150px; gap: 24px;">
-          <div>
-            <h3 style="font-size: 25px; margin: 0 0 2px;">Staff Software Engineer · Kraken</h3>
-            <ul style="margin: 10px 0 0; padding-left: 18px; display: grid; gap: 5px; font-size: 16px;">
-              <li>Lead the vault team, owning the crypto custody vault architecture end to end.</li>
-              <li>Cryptocurrency firmware for hardware security modules, in Rust.</li>
-              <li>MPC and threshold signature schemes in production.</li>
-              <li>Secure-element and key-handling guidance for partner teams.</li>
-            </ul>
-          </div>
-          <div data-when="true" style="font-family: var(--font-heading); font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;">Dec 2021 —<br>Present</div>
-        </div>
-
-        <div data-row="true" style="border-top: 1px solid var(--color-divider); padding: 26px 0; display: grid; grid-template-columns: 1fr 150px; gap: 24px;">
-          <div>
-            <h3 style="font-size: 25px; margin: 0 0 2px;">Senior Software Engineer · CPI Card Group</h3>
-            <ul style="margin: 10px 0 0; padding-left: 18px; display: grid; gap: 5px; font-size: 16px;">
-              <li>Chip-encoding module and protocol for industrial smart-card personalization machines.</li>
-              <li>Cryptographic key and certificate operations backed by HSMs.</li>
-            </ul>
-          </div>
-          <div data-when="true" style="font-family: var(--font-heading); font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;">Mar 2020 —<br>Dec 2021</div>
-        </div>
-
-        <div data-row="true" style="border-top: 1px solid var(--color-divider); padding: 26px 0; display: grid; grid-template-columns: 1fr 150px; gap: 24px;">
-          <div>
-            <h3 style="font-size: 25px; margin: 0 0 2px;">Co-founder &amp; CTO · PKI Co.</h3>
-            <ul style="margin: 10px 0 0; padding-left: 18px; display: grid; gap: 5px; font-size: 16px;">
-              <li>Co-founded the company and led engineering through six years of growth.</li>
-              <li>Complete PKI platform, from certificate authority to client tooling.</li>
-              <li>Secure-element and smart-card issuing systems for enterprise customers.</li>
-              <li>HSM programming for key generation, storage and certificate signing.</li>
-            </ul>
-          </div>
-          <div data-when="true" style="font-family: var(--font-heading); font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;">Sep 2012 —<br>Aug 2016</div>
-        </div>
-
-        <div data-row="true" style="border-top: 1px solid var(--color-divider); padding: 26px 0; display: grid; grid-template-columns: 1fr 150px; gap: 24px;">
-          <div>
-            <h3 style="font-size: 25px; margin: 0 0 2px;">Senior Software Engineer · Matiran</h3>
-            <ul style="margin: 10px 0 0; padding-left: 18px; display: grid; gap: 5px; font-size: 16px;">
-              <li>Architected an ID card issuing system and the protocols for industrial issuing and mailing machinery.</li>
-              <li>Consulted on PKI design and deployment.</li>
-            </ul>
-          </div>
-          <div data-when="true" style="font-family: var(--font-heading); font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;">Feb 2010 —<br>Sep 2012</div>
-        </div>
-
-        <div data-row="true" style="border-top: 1px solid var(--color-divider); border-bottom: 1px solid var(--color-divider); padding: 26px 0; display: grid; grid-template-columns: 1fr 150px; gap: 24px;">
-          <div>
-            <h3 style="font-size: 25px; margin: 0 0 2px;">Software Engineer · SG</h3>
-            <ul style="margin: 10px 0 0; padding-left: 18px; display: grid; gap: 5px; font-size: 16px;">
-              <li>Secure element programming on Java Cards and ICC chips.</li>
-              <li>Chip-encoding modules for industrial ICC issuing machines.</li>
-              <li>Cryptography libraries, a scripting language and an IDE for chip encoding.</li>
-            </ul>
-          </div>
-          <div data-when="true" style="font-family: var(--font-heading); font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;">Jun 2005 —<br>Feb 2010</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="patents" style="padding: 80px 0 0;">
-      <h2 style="font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-accent-700); margin: 0 0 28px;">Patents</h2>
-      <div style="display: grid; gap: 20px;">
-        <div class="card blueprint" style="padding: 22px; gap: 6px;">
-          <div class="card-kicker">USPTO provisional · Sep 2025</div>
-          <div style="font-family: var(--font-heading); font-size: 23px; line-height: 1.15;">Scalable Threshold Wallet Custody in Hardware Security Modules with Merkle Tree Integrity</div>
-          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
-        </div>
-        <div class="card blueprint" style="padding: 22px; gap: 6px;">
-          <div class="card-kicker">USPTO provisional · Sep 2025</div>
-          <div style="font-family: var(--font-heading); font-size: 23px; line-height: 1.15;">Ensuring State Consistency Across Hardware Security Modules Using Hash Chains</div>
-          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
-        </div>
-        <div class="card blueprint" style="padding: 22px; gap: 6px;">
-          <div class="card-kicker">USPTO provisional · Apr 2026</div>
-          <div style="font-family: var(--font-heading); font-size: 23px; line-height: 1.15;">Non-Custodial Crypto Wallet with Multi-Party Computation and HSM Integration</div>
-          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
-        </div>
-      </div>
-    </section>
-
-    <section id="work" style="padding: 80px 0 0;">
-      <h2 style="font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-accent-700); margin: 0 0 28px;">Independent R&amp;D</h2>
-      <div data-grid-2="true" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
-        <a data-card="true" class="card blueprint" href="https://github.com/secubit-io" target="_blank" rel="noopener" style="padding: 20px; gap: 4px; text-decoration: none; color: inherit;">
-          <h3 style="font-size: 22px; margin: 0;">Secubit</h3>
-          <div style="font-size: 13px; color: var(--color-accent-700); word-break: break-all;">github.com/secubit-io</div>
-          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      <nav
+        style="display: flex; flex-direction: column; gap: 10px; font-family: var(--font-heading); font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; border-top: 1px solid var(--color-accent-700); padding-top: 24px;">
+        <a href="#about" style="text-decoration: none; color: inherit;">About</a>
+        <a href="#experience" style="text-decoration: none; color: inherit;">Experience</a>
+        <a href="#patents" style="text-decoration: none; color: inherit;">Patents</a>
+        <a href="#work" style="text-decoration: none; color: inherit;">Independent R&amp;D</a>
+        <a href="#research" style="text-decoration: none; color: inherit;">Research &amp; education</a>
+        <a href="#publications" style="text-decoration: none; color: inherit;">Publications</a>
+        <a href="#blogs" style="text-decoration: none; color: inherit;">Blogs</a>
+      </nav>
+      <div
+        style="margin-top: auto; display: flex; flex-direction: column; gap: 6px; font-size: 14px; border-top: 1px solid var(--color-accent-700); padding-top: 24px;">
+        <a href="https://linkedin.com/in/hosrez" target="_blank" rel="noopener"
+          style="color: var(--color-accent-300); display: flex; align-items: center; gap: 10px;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect width="4" height="12" x="2" y="9"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+          <span>linkedin.com/in/hosrez</span>
         </a>
-        <a data-card="true" class="card blueprint" href="https://github.com/hosseinpro/yubishard" target="_blank" rel="noopener" style="padding: 20px; gap: 4px; text-decoration: none; color: inherit;">
-          <h3 style="font-size: 22px; margin: 0;">YubiShard</h3>
-          <div style="font-size: 13px; color: var(--color-accent-700); word-break: break-all;">github.com/hosseinpro/yubishard</div>
-          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <a href="https://github.com/hosseinpro" target="_blank" rel="noopener"
+          style="color: var(--color-accent-300); display: flex; align-items: center; gap: 10px;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path
+              d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 2-2.64-.5-5.36-.5-8 0-2-2-3-2-3-2-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4">
+            </path>
+            <path d="M9 18c-4.51 2-5-2-7-2"></path>
+          </svg>
+          <span>github.com/hosseinpro</span>
         </a>
-        <a data-card="true" class="card blueprint" href="https://github.com/hosseinpro/BitaWalletCard" target="_blank" rel="noopener" style="padding: 20px; gap: 4px; text-decoration: none; color: inherit;">
-          <h3 style="font-size: 22px; margin: 0;">BitaWallet</h3>
-          <div style="font-size: 13px; color: var(--color-accent-700); word-break: break-all;">github.com/hosseinpro/BitaWalletCard</div>
-          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <a href="https://scholar.google.com/citations?user=DyIrNbIAAAAJ&amp;hl=en" target="_blank" rel="noopener"
+          style="color: var(--color-accent-300); display: flex; align-items: center; gap: 10px;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 10v6"></path>
+            <path d="M2 10l10-5 10 5-10 5z"></path>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+          </svg>
+          <span>Google Scholar</span>
         </a>
-        <a data-card="true" class="card blueprint" href="https://github.com/gozar-io" target="_blank" rel="noopener" style="padding: 20px; gap: 4px; text-decoration: none; color: inherit;">
-          <h3 style="font-size: 22px; margin: 0;">Gozar</h3>
-          <div style="font-size: 13px; color: var(--color-accent-700); word-break: break-all;">github.com/gozar-io</div>
-          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <div
+          style="font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent-300); margin-top: 10px; opacity: 0.75;">
+          San Diego, California</div>
+      </div>
+    </aside>
+
+    <main data-main="true" style="padding: 0 56px; max-width: 1000px;">
+
+      <section id="about" style="padding: 88px 0 0;">
+        <h1
+          style="font-size: clamp(40px, 4.4vw, 62px); line-height: 1.04; letter-spacing: -0.02em; margin: 0 0 24px; max-width: 26ch;">
+          Twenty years where key compromise is unrecoverable.</h1>
+        <p style="font-size: 19px; line-height: 1.6; max-width: 68ch; margin: 0 0 14px; text-wrap: pretty;">Cryptography
+          engineer, hands-on across the full trust chain: HSM firmware, secure element programming and secure boot at
+          the hardware layer; multi-party computation, threshold signing and PKI at the protocol layer; production key
+          management and custody platforms above that.</p>
+        <p style="font-size: 19px; line-height: 1.6; max-width: 68ch; margin: 0;">I build the primitives other engineers
+          depend on and stay accountable for how they hold up in practice.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px;">
+          <span class="tag tag-outline" style="font-size: 13px; padding: 6px 12px;">Applied Cryptography</span>
+          <span class="tag tag-outline" style="font-size: 13px; padding: 6px 12px;">Key Management</span>
+          <span class="tag tag-outline" style="font-size: 13px; padding: 6px 12px;">MPC</span>
+          <span class="tag tag-outline" style="font-size: 13px; padding: 6px 12px;">Threshold Signatures</span>
+          <span class="tag tag-outline" style="font-size: 13px; padding: 6px 12px;">HSM</span>
+          <span class="tag tag-outline" style="font-size: 13px; padding: 6px 12px;">TEE</span>
+          <span class="tag tag-outline" style="font-size: 13px; padding: 6px 12px;">Secure Elements</span>
+          <span class="tag tag-outline" style="font-size: 13px; padding: 6px 12px;">Embedded Firmware</span>
+          <span class="tag tag-outline" style="font-size: 13px; padding: 6px 12px;">Secure Boot</span>
+          <span class="tag tag-outline" style="font-size: 13px; padding: 6px 12px;">PKI</span>
+          <span class="tag tag-outline" style="font-size: 13px; padding: 6px 12px;">Digital Asset Custody</span>
+          <span class="tag tag-outline" style="font-size: 13px; padding: 6px 12px;">Rust · C/C++ · Python · JS</span>
+        </div>
+      </section>
+
+      <section id="experience" style="padding: 80px 0 0;">
+        <h2
+          style="font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-accent-700); margin: 0 0 28px;">
+          Experience</h2>
+
+        <div style="display: grid; grid-template-columns: 1fr; gap: 0;">
+          <div data-row="true"
+            style="border-top: 1px solid var(--color-divider); padding: 26px 0; display: grid; grid-template-columns: 1fr 150px; gap: 24px;">
+            <div>
+              <h3 style="font-size: 25px; margin: 0 0 2px;">Staff Software Engineer · Kraken</h3>
+              <ul style="margin: 10px 0 0; padding-left: 18px; display: grid; gap: 5px; font-size: 16px;">
+                <li>Built Digital asset custody from scratch using HSM, MPC and Intel SGX.</li>
+                <li>Lead the vault team, owning the custody architecture end to end.</li>
+                <li>Designed the key establishment across the enclave boundary and wrote the framework.</li>
+                <li>Developed custom cryptocurrency firmware for HSM in Rust and C, loaded and run inside HSM.</li>
+                <li>Found a critical vulnerability in the HSM during security analysis; worked with the vendor through
+                  to a formal fix, shipped in a patch and all later releases for all of their customers.</li>
+                <li>Authored and performed the key management ceremonies; provisioned the fleet.</li>
+                <li>Took the system through external audit and approval.</li>
+              </ul>
+            </div>
+            <div data-when="true"
+              style="font-family: var(--font-heading); font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;">
+              Dec 2021 —<br>Present</div>
+          </div>
+
+          <div data-row="true"
+            style="border-top: 1px solid var(--color-divider); padding: 26px 0; display: grid; grid-template-columns: 1fr 150px; gap: 24px;">
+            <div>
+              <h3 style="font-size: 25px; margin: 0 0 2px;">Senior Software Engineer · CPI Card Group</h3>
+              <ul style="margin: 10px 0 0; padding-left: 18px; display: grid; gap: 5px; font-size: 16px;">
+                <li>Chip-encoding module and protocol for industrial smart-card personalization machines.</li>
+                <li>Cryptographic key and certificate operations backed by HSMs.</li>
+              </ul>
+            </div>
+            <div data-when="true"
+              style="font-family: var(--font-heading); font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;">
+              Mar 2020 —<br>Dec 2021</div>
+          </div>
+
+          <div data-row="true"
+            style="border-top: 1px solid var(--color-divider); padding: 26px 0; display: grid; grid-template-columns: 1fr 150px; gap: 24px;">
+            <div>
+              <h3 style="font-size: 25px; margin: 0 0 2px;">Co-founder &amp; CTO · PKI Co.</h3>
+              <ul style="margin: 10px 0 0; padding-left: 18px; display: grid; gap: 5px; font-size: 16px;">
+                <li>Co-founded the company and led engineering through six years of growth.</li>
+                <li>Complete PKI platform, from certificate authority to client tooling.</li>
+                <li>Secure-element and smart-card issuing systems for enterprise customers.</li>
+                <li>HSM programming for key generation, storage and certificate signing.</li>
+              </ul>
+            </div>
+            <div data-when="true"
+              style="font-family: var(--font-heading); font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;">
+              Sep 2012 —<br>Aug 2016</div>
+          </div>
+
+          <div data-row="true"
+            style="border-top: 1px solid var(--color-divider); padding: 26px 0; display: grid; grid-template-columns: 1fr 150px; gap: 24px;">
+            <div>
+              <h3 style="font-size: 25px; margin: 0 0 2px;">Senior Software Engineer · Matiran</h3>
+              <ul style="margin: 10px 0 0; padding-left: 18px; display: grid; gap: 5px; font-size: 16px;">
+                <li>Architected an ID card issuing system and the protocols for industrial issuing and mailing
+                  machinery.</li>
+                <li>Consulted on PKI design and deployment.</li>
+              </ul>
+            </div>
+            <div data-when="true"
+              style="font-family: var(--font-heading); font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;">
+              Feb 2010 —<br>Sep 2012</div>
+          </div>
+
+          <div data-row="true"
+            style="border-top: 1px solid var(--color-divider); border-bottom: 1px solid var(--color-divider); padding: 26px 0; display: grid; grid-template-columns: 1fr 150px; gap: 24px;">
+            <div>
+              <h3 style="font-size: 25px; margin: 0 0 2px;">Software Engineer · SG</h3>
+              <ul style="margin: 10px 0 0; padding-left: 18px; display: grid; gap: 5px; font-size: 16px;">
+                <li>Secure element programming on Java Cards and ICC chips.</li>
+                <li>Chip-encoding modules for industrial ICC issuing machines.</li>
+                <li>Cryptography libraries, a scripting language and an IDE for chip encoding.</li>
+              </ul>
+            </div>
+            <div data-when="true"
+              style="font-family: var(--font-heading); font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;">
+              Jun 2005 —<br>Feb 2010</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="patents" style="padding: 80px 0 0;">
+        <h2
+          style="font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-accent-700); margin: 0 0 28px;">
+          Patents</h2>
+        <div style="display: grid; gap: 20px;">
+          <div class="card blueprint" style="padding: 22px; gap: 6px;">
+            <div class="card-kicker">USPTO provisional · Sep 2025</div>
+            <div style="font-family: var(--font-heading); font-size: 23px; line-height: 1.15;">Scalable Threshold Wallet
+              Custody in Hardware Security Modules with Merkle Tree Integrity</div>
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          </div>
+          <div class="card blueprint" style="padding: 22px; gap: 6px;">
+            <div class="card-kicker">USPTO provisional · Sep 2025</div>
+            <div style="font-family: var(--font-heading); font-size: 23px; line-height: 1.15;">Ensuring State
+              Consistency Across Hardware Security Modules Using Hash Chains</div>
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          </div>
+          <div class="card blueprint" style="padding: 22px; gap: 6px;">
+            <div class="card-kicker">USPTO provisional · Apr 2026</div>
+            <div style="font-family: var(--font-heading); font-size: 23px; line-height: 1.15;">Non-Custodial Crypto
+              Wallet with Multi-Party Computation and HSM Integration</div>
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          </div>
+        </div>
+      </section>
+
+      <section id="work" style="padding: 80px 0 0;">
+        <h2
+          style="font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-accent-700); margin: 0 0 28px;">
+          Independent R&amp;D</h2>
+        <div data-grid-2="true" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+          <a data-card="true" class="card blueprint" href="https://github.com/secubit-io" target="_blank" rel="noopener"
+            style="padding: 20px; gap: 4px; text-decoration: none; color: inherit;">
+            <h3 style="font-size: 22px; margin: 0;">Secubit</h3>
+            <div style="font-size: 13px; color: var(--color-accent-700); word-break: break-all;">github.com/secubit-io
+            </div>
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          </a>
+          <a data-card="true" class="card blueprint" href="https://github.com/hosseinpro/yubishard" target="_blank"
+            rel="noopener" style="padding: 20px; gap: 4px; text-decoration: none; color: inherit;">
+            <h3 style="font-size: 22px; margin: 0;">YubiShard</h3>
+            <div style="font-size: 13px; color: var(--color-accent-700); word-break: break-all;">
+              github.com/hosseinpro/yubishard</div>
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          </a>
+          <a data-card="true" class="card blueprint" href="https://github.com/hosseinpro/BitaWalletCard" target="_blank"
+            rel="noopener" style="padding: 20px; gap: 4px; text-decoration: none; color: inherit;">
+            <h3 style="font-size: 22px; margin: 0;">BitaWallet</h3>
+            <div style="font-size: 13px; color: var(--color-accent-700); word-break: break-all;">
+              github.com/hosseinpro/BitaWalletCard</div>
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          </a>
+          <a data-card="true" class="card blueprint" href="https://github.com/gozar-io" target="_blank" rel="noopener"
+            style="padding: 20px; gap: 4px; text-decoration: none; color: inherit;">
+            <h3 style="font-size: 22px; margin: 0;">Gozar</h3>
+            <div style="font-size: 13px; color: var(--color-accent-700); word-break: break-all;">github.com/gozar-io
+            </div>
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          </a>
+        </div>
+      </section>
+
+      <section id="research" style="padding: 80px 0 0;">
+        <h2
+          style="font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-accent-700); margin: 0 0 28px;">
+          Research &amp; education</h2>
+        <div
+          style="border-top: 1px solid var(--color-divider); padding: 22px 0; display: grid; grid-template-columns: 1fr 200px; gap: 24px;"
+          data-pair="true">
+          <div>
+            <h3 style="font-size: 22px; margin: 0 0 2px;">Ph.D., Computer &amp; Information Systems Security</h3>
+            <div style="font-size: 15px;">Dissertation: <em>Improving the Security of Crypto Wallets in Blockchain
+                Technologies</em></div>
+          </div>
+          <div style="font-size: 14px; color: var(--color-neutral-700); text-align: right;">University of Central
+            Florida<br>2016–2020</div>
+        </div>
+        <div
+          style="border-top: 1px solid var(--color-divider); padding: 22px 0; display: grid; grid-template-columns: 1fr 200px; gap: 24px;"
+          data-pair="true">
+          <div>
+            <h3 style="font-size: 22px; margin: 0 0 2px;">M.Sc., Computer Software Engineering</h3>
+            <div style="font-size: 15px;">Thesis: <em>Secure Bootstrapping for Personal Computers</em></div>
+          </div>
+          <div style="font-size: 14px; color: var(--color-neutral-700); text-align: right;">Iran<br>2005–2008</div>
+        </div>
+        <div
+          style="border-top: 1px solid var(--color-divider); border-bottom: 1px solid var(--color-divider); padding: 22px 0; display: grid; grid-template-columns: 1fr 200px; gap: 24px;"
+          data-pair="true">
+          <div>
+            <h3 style="font-size: 22px; margin: 0 0 2px;">B.Sc., Computer Hardware Engineering</h3>
+            <div style="font-size: 15px;">Thesis: <em>Efficient Implementation of an RSA Cryptography Engine and
+                PKCS#1</em></div>
+          </div>
+          <div style="font-size: 14px; color: var(--color-neutral-700); text-align: right;">Iran<br>2001–2005</div>
+        </div>
+      </section>
+
+      <section id="publications" style="padding: 80px 0 0;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 24px; margin: 0 0 28px;">
+          <h2
+            style="font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-accent-700); margin: 0;">
+            Selected peer-reviewed papers</h2>
+          <a href="https://scholar.google.com/citations?user=DyIrNbIAAAAJ&amp;hl=en" target="_blank" rel="noopener"
+            style="font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;">Google
+            Scholar</a>
+        </div>
+
+        <div
+          style="border-top: 1px solid var(--color-divider); padding: 20px 0; display: grid; grid-template-columns: 1fr 120px; gap: 24px;"
+          data-pair="true">
+          <div>
+            <h3 style="font-size: 21px; margin: 0 0 4px; text-wrap: pretty;"><a
+                href="https://www.hosspro.com/papers/ICCC2020.pdf" target="_blank" rel="noopener"
+                style="text-decoration: none; color: inherit;">Multilayered Defense-in-Depth Architecture for
+                Cryptocurrency Wallet</a></h3>
+            <div style="font-size: 14px; color: var(--color-neutral-700);">H. Rezaeighaleh, C. Zou · IEEE 6th
+              International Conference on Computer and Communications (ICCC) · Chengdu, China</div>
+          </div>
+          <div
+            style="font-family: var(--font-heading); font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;"
+            data-when="true">2020</div>
+        </div>
+
+        <div
+          style="border-top: 1px solid var(--color-divider); padding: 20px 0; display: grid; grid-template-columns: 1fr 120px; gap: 24px;"
+          data-pair="true">
+          <div>
+            <h3 style="font-size: 21px; margin: 0 0 4px; text-wrap: pretty;"><a
+                href="https://www.hosspro.com/papers/BlockchainSys2020.pdf" target="_blank" rel="noopener"
+                style="text-decoration: none; color: inherit;">Efficient Off-Chain Transaction to Avoid Inaccessible
+                Coins in Cryptocurrencies</a></h3>
+            <div style="font-size: 14px; color: var(--color-neutral-700);">H. Rezaeighaleh, C. Zou · IEEE 19th
+              International Conference on Trust, Security and Privacy in Computing and Communications (TrustCom) ·
+              Guangzhou, China</div>
+          </div>
+          <div
+            style="font-family: var(--font-heading); font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;"
+            data-when="true">2020</div>
+        </div>
+
+        <div
+          style="border-top: 1px solid var(--color-divider); padding: 20px 0; display: grid; grid-template-columns: 1fr 120px; gap: 24px;"
+          data-pair="true">
+          <div>
+            <h3 style="font-size: 21px; margin: 0 0 4px; text-wrap: pretty;"><a
+                href="https://www.hosspro.com/papers/GLOBECOM-2019.pdf" target="_blank" rel="noopener"
+                style="text-decoration: none; color: inherit;">New Secure Approach to Backup Cryptocurrency Wallets</a>
+            </h3>
+            <div style="font-size: 14px; color: var(--color-neutral-700);">H. Rezaeighaleh, C. Zou · IEEE Global
+              Communications Conference (GLOBECOM) · Hawaii, US</div>
+          </div>
+          <div
+            style="font-family: var(--font-heading); font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;"
+            data-when="true">2019</div>
+        </div>
+
+        <div
+          style="border-top: 1px solid var(--color-divider); padding: 20px 0; display: grid; grid-template-columns: 1fr 120px; gap: 24px;"
+          data-pair="true">
+          <div>
+            <h3 style="font-size: 21px; margin: 0 0 4px; text-wrap: pretty;"><a
+                href="https://www.hosspro.com/papers/Blockchain-2019.pdf" target="_blank" rel="noopener"
+                style="text-decoration: none; color: inherit;">Deterministic Sub-Wallet for Cryptocurrencies</a></h3>
+            <div style="font-size: 14px; color: var(--color-neutral-700);">H. Rezaeighaleh, C. Zou · IEEE International
+              Conference on Blockchain · Atlanta, US</div>
+          </div>
+          <div
+            style="font-family: var(--font-heading); font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;"
+            data-when="true">2019</div>
+        </div>
+
+        <div
+          style="border-top: 1px solid var(--color-divider); padding: 20px 0; display: grid; grid-template-columns: 1fr 120px; gap: 24px;"
+          data-pair="true">
+          <div>
+            <h3 style="font-size: 21px; margin: 0 0 4px; text-wrap: pretty;"><a
+                href="https://www.hosspro.com/papers/ICC2019.pdf" target="_blank" rel="noopener"
+                style="text-decoration: none; color: inherit;">Using Disposable Domain Names to Detect Online Card
+                Transaction Fraud</a></h3>
+            <div style="font-size: 14px; color: var(--color-neutral-700);">R. Laurens, H. Rezaeighaleh, C. Zou, J. Jusak
+              · IEEE International Conference on Communications (ICC) — Communication and Information Systems Security
+              Symposium · Shanghai, China</div>
+          </div>
+          <div
+            style="font-family: var(--font-heading); font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;"
+            data-when="true">2019</div>
+        </div>
+
+        <div
+          style="border-top: 1px solid var(--color-divider); padding: 20px 0; display: grid; grid-template-columns: 1fr 120px; gap: 24px;"
+          data-pair="true">
+          <div>
+            <h3 style="font-size: 21px; margin: 0 0 4px; text-wrap: pretty;"><a
+                href="https://www.hosspro.com/papers/CNC2018.pdf" target="_blank" rel="noopener"
+                style="text-decoration: none; color: inherit;">Secure Smart Card Signing with Time-based Digital
+                Signature</a></h3>
+            <div style="font-size: 14px; color: var(--color-neutral-700);">H. Rezaeighaleh, R. Laurens, C. Zou ·
+              International Conference on Computing, Networking and Communications (CNC) · Hawaii, US</div>
+          </div>
+          <div
+            style="font-family: var(--font-heading); font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;"
+            data-when="true">2018</div>
+        </div>
+
+        <div
+          style="border-top: 1px solid var(--color-divider); padding: 20px 0; display: grid; grid-template-columns: 1fr 120px; gap: 24px;"
+          data-pair="true">
+          <div>
+            <h3 style="font-size: 21px; margin: 0 0 4px; text-wrap: pretty;"><a
+                href="https://www.hosspro.com/papers/TSP-09.pdf" target="_blank" rel="noopener"
+                style="text-decoration: none; color: inherit;">A New High-Performance Approach for Offline Replacement
+                Attack Prevention in Trusted Clients</a></h3>
+            <div style="font-size: 14px; color: var(--color-neutral-700);">H. Rezaei Ghaleh, S. Khorsandi · IEEE
+              International Symposium on Trust, Security and Privacy for Pervasive Applications (TSP) · Macau SAR, China
+            </div>
+          </div>
+          <div
+            style="font-family: var(--font-heading); font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;"
+            data-when="true">2009</div>
+        </div>
+
+        <div
+          style="border-top: 1px solid var(--color-divider); padding: 20px 0; display: grid; grid-template-columns: 1fr 120px; gap: 24px;"
+          data-pair="true">
+          <div>
+            <h3 style="font-size: 21px; margin: 0 0 4px; text-wrap: pretty;">Improving Client Security using a Smart
+              Card and Trusted Server</h3>
+            <div style="font-size: 14px; color: var(--color-neutral-700);">H. Rezaei Ghaleh, M. A. Doustari ·
+              International Conference on Security and Management (SAM), WORLDCOMP · Las Vegas, US</div>
+          </div>
+          <div
+            style="font-family: var(--font-heading); font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;"
+            data-when="true">2009</div>
+        </div>
+
+        <div
+          style="border-top: 1px solid var(--color-divider); padding: 20px 0; display: grid; grid-template-columns: 1fr 120px; gap: 24px;"
+          data-pair="true">
+          <div>
+            <h3 style="font-size: 21px; margin: 0 0 4px; text-wrap: pretty;"><a
+                href="https://www.hosspro.com/papers/Securware2009.pdf" target="_blank" rel="noopener"
+                style="text-decoration: none; color: inherit;">A New Approach to Protect the OS from Off-line Attacks
+                Using a Smart Card</a></h3>
+            <div style="font-size: 14px; color: var(--color-neutral-700);">H. Rezaei Ghaleh, S. Norouzi · Third
+              International Conference on Emerging Security Information, Systems and Technologies (SECURWARE) · Athens,
+              Greece</div>
+          </div>
+          <div
+            style="font-family: var(--font-heading); font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;"
+            data-when="true">2009</div>
+        </div>
+
+        <div
+          style="border-top: 1px solid var(--color-divider); border-bottom: 1px solid var(--color-divider); padding: 20px 0; display: grid; grid-template-columns: 1fr 120px; gap: 24px;"
+          data-pair="true">
+          <div>
+            <h3 style="font-size: 21px; margin: 0 0 4px; text-wrap: pretty;"><a
+                href="https://www.hosspro.com/papers/Securware2008.pdf" target="_blank" rel="noopener"
+                style="text-decoration: none; color: inherit;">A New Approach for a Secure and Portable OS</a></h3>
+            <div style="font-size: 14px; color: var(--color-neutral-700);">H. Rezaei Ghaleh, M. A. Doustari · Second
+              International Conference on Emerging Security Information, Systems and Technologies (SECURWARE) · Cap
+              Esterel, France</div>
+          </div>
+          <div
+            style="font-family: var(--font-heading); font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;"
+            data-when="true">2008</div>
+        </div>
+      </section>
+
+      <section id="blogs" style="padding: 80px 0 0;">
+        <h2
+          style="font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-accent-700); margin: 0 0 28px;">
+          Blogs</h2>
+
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 24px; margin: 0 0 12px;">
+          <h3 style="font-family: var(--font-heading); font-size: 20px; margin: 0;">The Secubit Blog</h3>
+          <a href="https://www.secubit.io/blogs/index.html" target="_blank" rel="noopener"
+            style="font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;">All
+            posts</a>
+        </div>
+
+        <a href="https://www.secubit.io/blogs/posts.html?post=ai-threats-to-crypto-custody" target="_blank"
+          rel="noopener"
+          style="border-top: 1px solid var(--color-divider); padding: 18px 0; display: grid; grid-template-columns: 1fr 120px; gap: 24px; text-decoration: none; color: inherit;"
+          data-pair="true">
+          <div>
+            <div
+              style="font-family: var(--font-heading); font-size: 20px; line-height: 1.2; margin-bottom: 4px; text-wrap: pretty;">
+              AI Just Changed the Custody Threat Model — Here's How Secubit Was Built for It</div>
+            <div style="font-size: 14px; color: var(--color-neutral-700);">Why frontier models break the old
+              software-security assumptions, and why trust belongs in hardware.</div>
+          </div>
+          <div
+            style="font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;"
+            data-when="true">Security<br>10 min</div>
         </a>
-      </div>
-    </section>
 
-    <section id="research" style="padding: 80px 0 0;">
-      <h2 style="font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-accent-700); margin: 0 0 28px;">Research &amp; education</h2>
-      <div style="border-top: 1px solid var(--color-divider); padding: 22px 0; display: grid; grid-template-columns: 1fr 200px; gap: 24px;" data-pair="true">
-        <div>
-          <h3 style="font-size: 22px; margin: 0 0 2px;">Ph.D., Computer &amp; Information Systems Security</h3>
-          <div style="font-size: 15px;">Dissertation: <em>Improving the Security of Crypto Wallets in Blockchain Technologies</em></div>
+        <a href="https://www.secubit.io/blogs/posts.html?post=why-hsm-mpc-gold-standard" target="_blank" rel="noopener"
+          style="border-top: 1px solid var(--color-divider); padding: 18px 0; display: grid; grid-template-columns: 1fr 120px; gap: 24px; text-decoration: none; color: inherit;"
+          data-pair="true">
+          <div>
+            <div
+              style="font-family: var(--font-heading); font-size: 20px; line-height: 1.2; margin-bottom: 4px; text-wrap: pretty;">
+              Why HSM + MPC Is the Gold Standard for Institutional Crypto Custody</div>
+            <div style="font-size: 14px; color: var(--color-neutral-700);">Removing single points of failure without
+              sacrificing key sovereignty.</div>
+          </div>
+          <div
+            style="font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;"
+            data-when="true">Security<br>9 min</div>
+        </a>
+
+        <a href="https://www.secubit.io/blogs/posts.html?post=secubit-vs-privy-dfns-fireblocks" target="_blank"
+          rel="noopener"
+          style="border-top: 1px solid var(--color-divider); padding: 18px 0; display: grid; grid-template-columns: 1fr 120px; gap: 24px; text-decoration: none; color: inherit;"
+          data-pair="true">
+          <div>
+            <div
+              style="font-family: var(--font-heading); font-size: 20px; line-height: 1.2; margin-bottom: 4px; text-wrap: pretty;">
+              Comparing Four Approaches to Institutional Wallet Security</div>
+            <div style="font-size: 14px; color: var(--color-neutral-700);">One question decides security and fit: where
+              do the keys live, and what controls a signature?</div>
+          </div>
+          <div
+            style="font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;"
+            data-when="true">Comparison<br>8 min</div>
+        </a>
+
+        <a href="https://www.secubit.io/blogs/posts.html?post=secubit-vs-securosys-ledger-enterprise" target="_blank"
+          rel="noopener"
+          style="border-top: 1px solid var(--color-divider); border-bottom: 1px solid var(--color-divider); padding: 18px 0; display: grid; grid-template-columns: 1fr 120px; gap: 24px; text-decoration: none; color: inherit;"
+          data-pair="true">
+          <div>
+            <div
+              style="font-family: var(--font-heading); font-size: 20px; line-height: 1.2; margin-bottom: 4px; text-wrap: pretty;">
+              Hardware-Grade Security Without the Hardware Burden</div>
+            <div style="font-size: 14px; color: var(--color-neutral-700);">Real hardware assurance shouldn't require
+              becoming a hardware operator.</div>
+          </div>
+          <div
+            style="font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;"
+            data-when="true">Comparison<br>7 min</div>
+        </a>
+
+        <div
+          style="display: flex; align-items: baseline; justify-content: space-between; gap: 24px; margin: 40px 0 12px;">
+          <h3 style="font-family: var(--font-heading); font-size: 20px; margin: 0;">On Medium</h3>
+          <a href="https://medium.com/@hossein.rz" target="_blank" rel="noopener"
+            style="font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;">All
+            posts</a>
         </div>
-        <div style="font-size: 14px; color: var(--color-neutral-700); text-align: right;">University of Central Florida<br>2016–2020</div>
-      </div>
-      <div style="border-top: 1px solid var(--color-divider); padding: 22px 0; display: grid; grid-template-columns: 1fr 200px; gap: 24px;" data-pair="true">
-        <div>
-          <h3 style="font-size: 22px; margin: 0 0 2px;">M.Sc., Computer Software Engineering</h3>
-          <div style="font-size: 15px;">Thesis: <em>Secure Bootstrapping for Personal Computers</em></div>
-        </div>
-        <div style="font-size: 14px; color: var(--color-neutral-700); text-align: right;">Iran<br>2005–2008</div>
-      </div>
-      <div style="border-top: 1px solid var(--color-divider); border-bottom: 1px solid var(--color-divider); padding: 22px 0; display: grid; grid-template-columns: 1fr 200px; gap: 24px;" data-pair="true">
-        <div>
-          <h3 style="font-size: 22px; margin: 0 0 2px;">B.Sc., Computer Hardware Engineering</h3>
-          <div style="font-size: 15px;">Thesis: <em>Efficient Implementation of an RSA Cryptography Engine and PKCS#1</em></div>
-        </div>
-        <div style="font-size: 14px; color: var(--color-neutral-700); text-align: right;">Iran<br>2001–2005</div>
-      </div>
-    </section>
 
-    <section id="publications" style="padding: 80px 0 0;">
-      <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 24px; margin: 0 0 28px;">
-        <h2 style="font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-accent-700); margin: 0;">Selected peer-reviewed papers</h2>
-        <a href="https://scholar.google.com/citations?user=DyIrNbIAAAAJ&amp;hl=en" target="_blank" rel="noopener" style="font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;">Google Scholar</a>
-      </div>
+        <a href="https://medium.com/@hossein.rz/is-the-new-trezor-safe-5-more-secure-than-previous-trezor-models-7308943f7bed"
+          target="_blank" rel="noopener"
+          style="border-top: 1px solid var(--color-divider); padding: 18px 0; display: grid; grid-template-columns: 1fr 120px; gap: 24px; text-decoration: none; color: inherit;"
+          data-pair="true">
+          <div style="font-family: var(--font-heading); font-size: 20px; line-height: 1.2; text-wrap: pretty;">Is the
+            New Trezor Safe 5 More Secure Than Previous Trezor Models?</div>
+          <div
+            style="font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;"
+            data-when="true">Jun 2024</div>
+        </a>
 
-      <div style="border-top: 1px solid var(--color-divider); padding: 20px 0; display: grid; grid-template-columns: 1fr 120px; gap: 24px;" data-pair="true">
-        <div>
-          <h3 style="font-size: 21px; margin: 0 0 4px; text-wrap: pretty;"><a href="https://www.hosspro.com/papers/ICCC2020.pdf" target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">Multilayered Defense-in-Depth Architecture for Cryptocurrency Wallet</a></h3>
-          <div style="font-size: 14px; color: var(--color-neutral-700);">H. Rezaeighaleh, C. Zou · IEEE 6th International Conference on Computer and Communications (ICCC) · Chengdu, China</div>
-        </div>
-        <div style="font-family: var(--font-heading); font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;" data-when="true">2020</div>
-      </div>
+        <a href="https://medium.com/@hossein.rz/beyond-hot-and-cold-redefining-crypto-custody-with-hardware-security-module-hsm-13846710aa26"
+          target="_blank" rel="noopener"
+          style="border-top: 1px solid var(--color-divider); padding: 18px 0; display: grid; grid-template-columns: 1fr 120px; gap: 24px; text-decoration: none; color: inherit;"
+          data-pair="true">
+          <div style="font-family: var(--font-heading); font-size: 20px; line-height: 1.2; text-wrap: pretty;">Beyond
+            Hot and Cold: Redefining Crypto Custody with Hardware Security Modules</div>
+          <div
+            style="font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;"
+            data-when="true">Apr 2024</div>
+        </a>
 
-      <div style="border-top: 1px solid var(--color-divider); padding: 20px 0; display: grid; grid-template-columns: 1fr 120px; gap: 24px;" data-pair="true">
-        <div>
-          <h3 style="font-size: 21px; margin: 0 0 4px; text-wrap: pretty;"><a href="https://www.hosspro.com/papers/BlockchainSys2020.pdf" target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">Efficient Off-Chain Transaction to Avoid Inaccessible Coins in Cryptocurrencies</a></h3>
-          <div style="font-size: 14px; color: var(--color-neutral-700);">H. Rezaeighaleh, C. Zou · IEEE 19th International Conference on Trust, Security and Privacy in Computing and Communications (TrustCom) · Guangzhou, China</div>
-        </div>
-        <div style="font-family: var(--font-heading); font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;" data-when="true">2020</div>
-      </div>
+        <a href="https://medium.com/@hossein.rz/self-custody-the-good-the-bad-the-ugly-ac62c7593cc7" target="_blank"
+          rel="noopener"
+          style="border-top: 1px solid var(--color-divider); padding: 18px 0; display: grid; grid-template-columns: 1fr 120px; gap: 24px; text-decoration: none; color: inherit;"
+          data-pair="true">
+          <div style="font-family: var(--font-heading); font-size: 20px; line-height: 1.2; text-wrap: pretty;">
+            Self-Custody: The Good, The Bad and The Ugly</div>
+          <div
+            style="font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;"
+            data-when="true">Mar 2024</div>
+        </a>
 
-      <div style="border-top: 1px solid var(--color-divider); padding: 20px 0; display: grid; grid-template-columns: 1fr 120px; gap: 24px;" data-pair="true">
-        <div>
-          <h3 style="font-size: 21px; margin: 0 0 4px; text-wrap: pretty;"><a href="https://www.hosspro.com/papers/GLOBECOM-2019.pdf" target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">New Secure Approach to Backup Cryptocurrency Wallets</a></h3>
-          <div style="font-size: 14px; color: var(--color-neutral-700);">H. Rezaeighaleh, C. Zou · IEEE Global Communications Conference (GLOBECOM) · Hawaii, US</div>
-        </div>
-        <div style="font-family: var(--font-heading); font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;" data-when="true">2019</div>
-      </div>
+        <a href="https://medium.com/@hossein.rz/the-current-most-secure-crypto-wallet-b0b8bc8ecc97" target="_blank"
+          rel="noopener"
+          style="border-top: 1px solid var(--color-divider); padding: 18px 0; display: grid; grid-template-columns: 1fr 120px; gap: 24px; text-decoration: none; color: inherit;"
+          data-pair="true">
+          <div style="font-family: var(--font-heading); font-size: 20px; line-height: 1.2; text-wrap: pretty;">The
+            Current Most Secure Crypto Wallet</div>
+          <div
+            style="font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;"
+            data-when="true">Mar 2023</div>
+        </a>
 
-      <div style="border-top: 1px solid var(--color-divider); padding: 20px 0; display: grid; grid-template-columns: 1fr 120px; gap: 24px;" data-pair="true">
-        <div>
-          <h3 style="font-size: 21px; margin: 0 0 4px; text-wrap: pretty;"><a href="https://www.hosspro.com/papers/Blockchain-2019.pdf" target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">Deterministic Sub-Wallet for Cryptocurrencies</a></h3>
-          <div style="font-size: 14px; color: var(--color-neutral-700);">H. Rezaeighaleh, C. Zou · IEEE International Conference on Blockchain · Atlanta, US</div>
-        </div>
-        <div style="font-family: var(--font-heading); font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;" data-when="true">2019</div>
-      </div>
+        <a href="https://medium.com/@hossein.rz/crypto-wallet-mechanics-46d48db5bd2e" target="_blank" rel="noopener"
+          style="border-top: 1px solid var(--color-divider); border-bottom: 1px solid var(--color-divider); padding: 18px 0; display: grid; grid-template-columns: 1fr 120px; gap: 24px; text-decoration: none; color: inherit;"
+          data-pair="true">
+          <div style="font-family: var(--font-heading); font-size: 20px; line-height: 1.2; text-wrap: pretty;">Crypto
+            Wallet Mechanics</div>
+          <div
+            style="font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;"
+            data-when="true">Feb 2023</div>
+        </a>
+      </section>
 
-      <div style="border-top: 1px solid var(--color-divider); padding: 20px 0; display: grid; grid-template-columns: 1fr 120px; gap: 24px;" data-pair="true">
-        <div>
-          <h3 style="font-size: 21px; margin: 0 0 4px; text-wrap: pretty;"><a href="https://www.hosspro.com/papers/ICC2019.pdf" target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">Using Disposable Domain Names to Detect Online Card Transaction Fraud</a></h3>
-          <div style="font-size: 14px; color: var(--color-neutral-700);">R. Laurens, H. Rezaeighaleh, C. Zou, J. Jusak · IEEE International Conference on Communications (ICC) — Communication and Information Systems Security Symposium · Shanghai, China</div>
-        </div>
-        <div style="font-family: var(--font-heading); font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;" data-when="true">2019</div>
-      </div>
+      <div style="height: 72px;"></div>
+    </main>
+  </div>
 
-      <div style="border-top: 1px solid var(--color-divider); padding: 20px 0; display: grid; grid-template-columns: 1fr 120px; gap: 24px;" data-pair="true">
-        <div>
-          <h3 style="font-size: 21px; margin: 0 0 4px; text-wrap: pretty;"><a href="https://www.hosspro.com/papers/CNC2018.pdf" target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">Secure Smart Card Signing with Time-based Digital Signature</a></h3>
-          <div style="font-size: 14px; color: var(--color-neutral-700);">H. Rezaeighaleh, R. Laurens, C. Zou · International Conference on Computing, Networking and Communications (CNC) · Hawaii, US</div>
-        </div>
-        <div style="font-family: var(--font-heading); font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;" data-when="true">2018</div>
-      </div>
-
-      <div style="border-top: 1px solid var(--color-divider); padding: 20px 0; display: grid; grid-template-columns: 1fr 120px; gap: 24px;" data-pair="true">
-        <div>
-          <h3 style="font-size: 21px; margin: 0 0 4px; text-wrap: pretty;"><a href="https://www.hosspro.com/papers/TSP-09.pdf" target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">A New High-Performance Approach for Offline Replacement Attack Prevention in Trusted Clients</a></h3>
-          <div style="font-size: 14px; color: var(--color-neutral-700);">H. Rezaei Ghaleh, S. Khorsandi · IEEE International Symposium on Trust, Security and Privacy for Pervasive Applications (TSP) · Macau SAR, China</div>
-        </div>
-        <div style="font-family: var(--font-heading); font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;" data-when="true">2009</div>
-      </div>
-
-      <div style="border-top: 1px solid var(--color-divider); padding: 20px 0; display: grid; grid-template-columns: 1fr 120px; gap: 24px;" data-pair="true">
-        <div>
-          <h3 style="font-size: 21px; margin: 0 0 4px; text-wrap: pretty;">Improving Client Security using a Smart Card and Trusted Server</h3>
-          <div style="font-size: 14px; color: var(--color-neutral-700);">H. Rezaei Ghaleh, M. A. Doustari · International Conference on Security and Management (SAM), WORLDCOMP · Las Vegas, US</div>
-        </div>
-        <div style="font-family: var(--font-heading); font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;" data-when="true">2009</div>
-      </div>
-
-      <div style="border-top: 1px solid var(--color-divider); padding: 20px 0; display: grid; grid-template-columns: 1fr 120px; gap: 24px;" data-pair="true">
-        <div>
-          <h3 style="font-size: 21px; margin: 0 0 4px; text-wrap: pretty;"><a href="https://www.hosspro.com/papers/Securware2009.pdf" target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">A New Approach to Protect the OS from Off-line Attacks Using a Smart Card</a></h3>
-          <div style="font-size: 14px; color: var(--color-neutral-700);">H. Rezaei Ghaleh, S. Norouzi · Third International Conference on Emerging Security Information, Systems and Technologies (SECURWARE) · Athens, Greece</div>
-        </div>
-        <div style="font-family: var(--font-heading); font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;" data-when="true">2009</div>
-      </div>
-
-      <div style="border-top: 1px solid var(--color-divider); border-bottom: 1px solid var(--color-divider); padding: 20px 0; display: grid; grid-template-columns: 1fr 120px; gap: 24px;" data-pair="true">
-        <div>
-          <h3 style="font-size: 21px; margin: 0 0 4px; text-wrap: pretty;"><a href="https://www.hosspro.com/papers/Securware2008.pdf" target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">A New Approach for a Secure and Portable OS</a></h3>
-          <div style="font-size: 14px; color: var(--color-neutral-700);">H. Rezaei Ghaleh, M. A. Doustari · Second International Conference on Emerging Security Information, Systems and Technologies (SECURWARE) · Cap Esterel, France</div>
-        </div>
-        <div style="font-family: var(--font-heading); font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;" data-when="true">2008</div>
-      </div>
-    </section>
-
-    <section id="blogs" style="padding: 80px 0 0;">
-      <h2 style="font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-accent-700); margin: 0 0 28px;">Blogs</h2>
-
-      <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 24px; margin: 0 0 12px;">
-        <h3 style="font-family: var(--font-heading); font-size: 20px; margin: 0;">The Secubit Blog</h3>
-        <a href="https://www.secubit.io/blogs/index.html" target="_blank" rel="noopener" style="font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;">All posts</a>
-      </div>
-
-      <a href="https://www.secubit.io/blogs/posts.html?post=ai-threats-to-crypto-custody" target="_blank" rel="noopener" style="border-top: 1px solid var(--color-divider); padding: 18px 0; display: grid; grid-template-columns: 1fr 120px; gap: 24px; text-decoration: none; color: inherit;" data-pair="true">
-        <div>
-          <div style="font-family: var(--font-heading); font-size: 20px; line-height: 1.2; margin-bottom: 4px; text-wrap: pretty;">AI Just Changed the Custody Threat Model — Here's How Secubit Was Built for It</div>
-          <div style="font-size: 14px; color: var(--color-neutral-700);">Why frontier models break the old software-security assumptions, and why trust belongs in hardware.</div>
-        </div>
-        <div style="font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;" data-when="true">Security<br>10 min</div>
-      </a>
-
-      <a href="https://www.secubit.io/blogs/posts.html?post=why-hsm-mpc-gold-standard" target="_blank" rel="noopener" style="border-top: 1px solid var(--color-divider); padding: 18px 0; display: grid; grid-template-columns: 1fr 120px; gap: 24px; text-decoration: none; color: inherit;" data-pair="true">
-        <div>
-          <div style="font-family: var(--font-heading); font-size: 20px; line-height: 1.2; margin-bottom: 4px; text-wrap: pretty;">Why HSM + MPC Is the Gold Standard for Institutional Crypto Custody</div>
-          <div style="font-size: 14px; color: var(--color-neutral-700);">Removing single points of failure without sacrificing key sovereignty.</div>
-        </div>
-        <div style="font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;" data-when="true">Security<br>9 min</div>
-      </a>
-
-      <a href="https://www.secubit.io/blogs/posts.html?post=secubit-vs-privy-dfns-fireblocks" target="_blank" rel="noopener" style="border-top: 1px solid var(--color-divider); padding: 18px 0; display: grid; grid-template-columns: 1fr 120px; gap: 24px; text-decoration: none; color: inherit;" data-pair="true">
-        <div>
-          <div style="font-family: var(--font-heading); font-size: 20px; line-height: 1.2; margin-bottom: 4px; text-wrap: pretty;">Comparing Four Approaches to Institutional Wallet Security</div>
-          <div style="font-size: 14px; color: var(--color-neutral-700);">One question decides security and fit: where do the keys live, and what controls a signature?</div>
-        </div>
-        <div style="font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;" data-when="true">Comparison<br>8 min</div>
-      </a>
-
-      <a href="https://www.secubit.io/blogs/posts.html?post=secubit-vs-securosys-ledger-enterprise" target="_blank" rel="noopener" style="border-top: 1px solid var(--color-divider); border-bottom: 1px solid var(--color-divider); padding: 18px 0; display: grid; grid-template-columns: 1fr 120px; gap: 24px; text-decoration: none; color: inherit;" data-pair="true">
-        <div>
-          <div style="font-family: var(--font-heading); font-size: 20px; line-height: 1.2; margin-bottom: 4px; text-wrap: pretty;">Hardware-Grade Security Without the Hardware Burden</div>
-          <div style="font-size: 14px; color: var(--color-neutral-700);">Real hardware assurance shouldn't require becoming a hardware operator.</div>
-        </div>
-        <div style="font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;" data-when="true">Comparison<br>7 min</div>
-      </a>
-
-      <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 24px; margin: 40px 0 12px;">
-        <h3 style="font-family: var(--font-heading); font-size: 20px; margin: 0;">On Medium</h3>
-        <a href="https://medium.com/@hossein.rz" target="_blank" rel="noopener" style="font-family: var(--font-heading); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;">All posts</a>
-      </div>
-
-      <a href="https://medium.com/@hossein.rz/is-the-new-trezor-safe-5-more-secure-than-previous-trezor-models-7308943f7bed" target="_blank" rel="noopener" style="border-top: 1px solid var(--color-divider); padding: 18px 0; display: grid; grid-template-columns: 1fr 120px; gap: 24px; text-decoration: none; color: inherit;" data-pair="true">
-        <div style="font-family: var(--font-heading); font-size: 20px; line-height: 1.2; text-wrap: pretty;">Is the New Trezor Safe 5 More Secure Than Previous Trezor Models?</div>
-        <div style="font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;" data-when="true">Jun 2024</div>
-      </a>
-
-      <a href="https://medium.com/@hossein.rz/beyond-hot-and-cold-redefining-crypto-custody-with-hardware-security-module-hsm-13846710aa26" target="_blank" rel="noopener" style="border-top: 1px solid var(--color-divider); padding: 18px 0; display: grid; grid-template-columns: 1fr 120px; gap: 24px; text-decoration: none; color: inherit;" data-pair="true">
-        <div style="font-family: var(--font-heading); font-size: 20px; line-height: 1.2; text-wrap: pretty;">Beyond Hot and Cold: Redefining Crypto Custody with Hardware Security Modules</div>
-        <div style="font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;" data-when="true">Apr 2024</div>
-      </a>
-
-      <a href="https://medium.com/@hossein.rz/self-custody-the-good-the-bad-the-ugly-ac62c7593cc7" target="_blank" rel="noopener" style="border-top: 1px solid var(--color-divider); padding: 18px 0; display: grid; grid-template-columns: 1fr 120px; gap: 24px; text-decoration: none; color: inherit;" data-pair="true">
-        <div style="font-family: var(--font-heading); font-size: 20px; line-height: 1.2; text-wrap: pretty;">Self-Custody: The Good, The Bad and The Ugly</div>
-        <div style="font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;" data-when="true">Mar 2024</div>
-      </a>
-
-      <a href="https://medium.com/@hossein.rz/the-current-most-secure-crypto-wallet-b0b8bc8ecc97" target="_blank" rel="noopener" style="border-top: 1px solid var(--color-divider); padding: 18px 0; display: grid; grid-template-columns: 1fr 120px; gap: 24px; text-decoration: none; color: inherit;" data-pair="true">
-        <div style="font-family: var(--font-heading); font-size: 20px; line-height: 1.2; text-wrap: pretty;">The Current Most Secure Crypto Wallet</div>
-        <div style="font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;" data-when="true">Mar 2023</div>
-      </a>
-
-      <a href="https://medium.com/@hossein.rz/crypto-wallet-mechanics-46d48db5bd2e" target="_blank" rel="noopener" style="border-top: 1px solid var(--color-divider); border-bottom: 1px solid var(--color-divider); padding: 18px 0; display: grid; grid-template-columns: 1fr 120px; gap: 24px; text-decoration: none; color: inherit;" data-pair="true">
-        <div style="font-family: var(--font-heading); font-size: 20px; line-height: 1.2; text-wrap: pretty;">Crypto Wallet Mechanics</div>
-        <div style="font-family: var(--font-heading); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-700); text-align: right;" data-when="true">Feb 2023</div>
-      </a>
-    </section>
-
-    <div style="height: 72px;"></div>
-  </main>
-</div>
-
-<script>
-(function () {
-  var root = document.querySelector('[data-site]');
-  if (!root || !('IntersectionObserver' in window)) return;
-  var links = Array.prototype.slice
-    .call(root.querySelectorAll('[data-sidebar] nav a'))
-    .filter(function (a) { return (a.getAttribute('href') || '').indexOf('#') === 0; });
-  var map = new Map();
-  links.forEach(function (a) {
-    var el = root.querySelector(a.getAttribute('href'));
-    if (el) map.set(el, a);
-  });
-  function mark(active) {
-    links.forEach(function (a) {
-      var on = a === active;
-      a.style.opacity = on ? '1' : '0.62';
-      a.style.borderBottomColor = on ? 'currentColor' : 'transparent';
-    });
-  }
-  mark(links[0]);
-  var io = new IntersectionObserver(function (entries) {
-    var vis = entries
-      .filter(function (e) { return e.isIntersecting; })
-      .sort(function (a, b) {
-        return a.boundingClientRect.top - b.boundingClientRect.top;
-      })[0];
-    if (vis) mark(map.get(vis.target));
-  }, { rootMargin: '-15% 0px -70% 0px' });
-  map.forEach(function (_a, el) { io.observe(el); });
-})();
-</script>
+  <script>
+    (function () {
+      var root = document.querySelector('[data-site]');
+      if (!root || !('IntersectionObserver' in window)) return;
+      var links = Array.prototype.slice
+        .call(root.querySelectorAll('[data-sidebar] nav a'))
+        .filter(function (a) { return (a.getAttribute('href') || '').indexOf('#') === 0; });
+      var map = new Map();
+      links.forEach(function (a) {
+        var el = root.querySelector(a.getAttribute('href'));
+        if (el) map.set(el, a);
+      });
+      function mark(active) {
+        links.forEach(function (a) {
+          var on = a === active;
+          a.style.opacity = on ? '1' : '0.62';
+          a.style.borderBottomColor = on ? 'currentColor' : 'transparent';
+        });
+      }
+      mark(links[0]);
+      var io = new IntersectionObserver(function (entries) {
+        var vis = entries
+          .filter(function (e) { return e.isIntersecting; })
+          .sort(function (a, b) {
+            return a.boundingClientRect.top - b.boundingClientRect.top;
+          })[0];
+        if (vis) mark(map.get(vis.target));
+      }, { rootMargin: '-15% 0px -70% 0px' });
+      map.forEach(function (_a, el) { io.observe(el); });
+    })();
+  </script>
 </body>
+
 </html>
