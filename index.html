@@ -51,6 +51,10 @@
       transition: background .15s ease;
     }
 
+    [data-card] a:hover {
+      text-decoration: underline;
+    }
+
     @media (max-width: 900px) {
       [data-site] {
         grid-template-columns: 1fr !important;
@@ -311,20 +315,26 @@
           style="font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-accent-700); margin: 0 0 28px;">
           Independent R&amp;D</h2>
         <div data-grid-2="true" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
-          <a data-card="true" class="card blueprint" href="https://github.com/secubit-io" target="_blank" rel="noopener"
-            style="padding: 20px; gap: 4px; text-decoration: none; color: inherit;">
+          <div data-card="true" class="card blueprint" style="padding: 20px; gap: 4px;">
             <h3 style="font-size: 22px; margin: 0;">Secubit</h3>
-            <div style="font-size: 13px; color: var(--color-accent-700); word-break: break-all;">github.com/secubit-io
-            </div>
+            <div style="font-size: 13px; color: var(--color-accent-700); word-break: break-all;"><a
+                href="https://www.secubit.io" target="_blank" rel="noopener"
+                style="text-decoration: none; color: inherit;">www.secubit.io</a></div>
+            <div style="font-size: 13px; color: var(--color-accent-700); word-break: break-all;"><a
+                href="https://github.com/secubit-io" target="_blank" rel="noopener"
+                style="text-decoration: none; color: inherit;">github.com/secubit-io</a></div>
             <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
-          </a>
-          <a data-card="true" class="card blueprint" href="https://github.com/hosseinpro/yubishard" target="_blank"
-            rel="noopener" style="padding: 20px; gap: 4px; text-decoration: none; color: inherit;">
+          </div>
+          <div data-card="true" class="card blueprint" style="padding: 20px; gap: 4px;">
             <h3 style="font-size: 22px; margin: 0;">YubiShard</h3>
-            <div style="font-size: 13px; color: var(--color-accent-700); word-break: break-all;">
-              github.com/hosseinpro/yubishard</div>
+            <div style="font-size: 13px; color: var(--color-accent-700); word-break: break-all;"><a
+                href="https://www.yubishard.com" target="_blank" rel="noopener"
+                style="text-decoration: none; color: inherit;">www.yubishard.com</a></div>
+            <div style="font-size: 13px; color: var(--color-accent-700); word-break: break-all;"><a
+                href="https://github.com/hosseinpro/yubishard" target="_blank" rel="noopener"
+                style="text-decoration: none; color: inherit;">github.com/hosseinpro/yubishard</a></div>
             <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
-          </a>
+          </div>
           <a data-card="true" class="card blueprint" href="https://github.com/hosseinpro/BitaWalletCard" target="_blank"
             rel="noopener" style="padding: 20px; gap: 4px; text-decoration: none; color: inherit;">
             <h3 style="font-size: 22px; margin: 0;">BitaWallet</h3>
